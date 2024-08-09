@@ -22,7 +22,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://v6.exchangerate-api.com\"")
+            buildConfigField("String", "API_KEY", "\"27c7933ef07ca0cc06a6f431\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://v6.exchangerate-api.com\"")
+            buildConfigField("String", "API_KEY", "\"27c7933ef07ca0cc06a6f431\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -39,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -58,8 +65,8 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-    implementation ("com.google.dagger:dagger:2.51.1")
-    kapt("com.google.dagger:dagger-compiler:2.51.1")
+    implementation ("com.google.dagger:dagger:2.48")
+    kapt("com.google.dagger:dagger-compiler:2.48")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
