@@ -1,6 +1,6 @@
-package com.example.pair.state
+package com.example.pair.presentation.state
 
-import com.example.pair.data.ExchangeResponse
+import com.example.pair.data.model.ExchangeResponse
 
 sealed class ExchangeRateState {
     data object Idle: ExchangeRateState()

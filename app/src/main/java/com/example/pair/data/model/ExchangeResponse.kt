@@ -1,4 +1,4 @@
-package com.example.pair.data
+package com.example.pair.data.model
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer

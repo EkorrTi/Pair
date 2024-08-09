@@ -5,10 +5,7 @@ import com.example.pair.di.ApplicationComponent
 import com.example.pair.di.DaggerApplicationComponent
 
 class MyApplication: Application() {
-    lateinit var appComponent: ApplicationComponent
-
-    override fun onCreate() {
-        super.onCreate()
-        appComponent = DaggerApplicationComponent.create()
+    val appComponent: ApplicationComponent by lazy {
+        DaggerApplicationComponent.factory().create(applicationContext)
     }
 }
